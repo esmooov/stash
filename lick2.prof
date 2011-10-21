@@ -1,0 +1,39 @@
+	Sun Oct  9 20:29 2011 Time and Allocation Profiling Report  (Final)
+
+	   lick2 +RTS -K100M -p -sstderr -RTS
+
+	total time  =        0.32 secs   (16 ticks @ 20 ms)
+	total alloc = 1,430,753,856 bytes  (excludes profiling overheads)
+
+COST CENTRE    MODULE %time %alloc
+
+cullWord       Main  37.5   21.1
+updateWord     Main  31.2   55.4
+procText       Main  12.5   16.4
+main           Main  12.5    5.5
+isClassChar    Main   6.2    0.0
+incrementOrAdd Main   0.0    1.6
+
+
+                                                                                               individual    inherited
+COST CENTRE        MODULE                  no.    entries  %time %alloc   %time %alloc
+
+MAIN               MAIN                     49           0   0.0    0.0   100.0  100.0
+ main              Main                     98           4  12.5    5.5   100.0  100.0
+  procText         Main                    100           2  12.5   16.4    87.5   94.5
+   updateWord      Main                    102      399649  31.2   55.4    75.0   78.1
+    incrementOrAdd Main                    106      399649   0.0    1.6     0.0    1.6
+    cullWord       Main                    103      399649  37.5   21.1    43.8   21.1
+     isClassChar   Main                    105     2064093   6.2    0.0     6.2    0.0
+ CAF:main2         Main                     97           1   0.0    0.0     0.0    0.0
+  procText         Main                    101           0   0.0    0.0     0.0    0.0
+ CAF:lvl6_r2CV     Main                     96           1   0.0    0.0     0.0    0.0
+  cullWord         Main                    104           0   0.0    0.0     0.0    0.0
+ CAF:main7         Main                     95           1   0.0    0.0     0.0    0.0
+  main             Main                     99           1   0.0    0.0     0.0    0.0
+ CAF               GHC.IO.Handle.FD         91           2   0.0    0.0     0.0    0.0
+ CAF               GHC.Conc.Signal          84           1   0.0    0.0     0.0    0.0
+ CAF               GHC.Show                 83           2   0.0    0.0     0.0    0.0
+ CAF               GHC.IO.Encoding          78           1   0.0    0.0     0.0    0.0
+ CAF               GHC.IO.Encoding.Iconv    77           5   0.0    0.0     0.0    0.0
+ CAF               GHC.IO.FD                76           1   0.0    0.0     0.0    0.0

@@ -1,0 +1,41 @@
+	Sun Oct  9 20:32 2011 Time and Allocation Profiling Report  (Final)
+
+	   lick +RTS -K100M -hd -p -sstderr -RTS
+
+	total time  =        0.26 secs   (13 ticks @ 20 ms)
+	total alloc = 2,005,323,088 bytes  (excludes profiling overheads)
+
+COST CENTRE MODULE %time %alloc
+
+main       Main  46.2   14.2
+whiteMerge Main  15.4   12.7
+updateWord Main  15.4   54.3
+procTextN  Main  15.4   13.4
+cullWord   Main   7.7    4.5
+
+
+                                                                                               individual    inherited
+COST CENTRE        MODULE                  no.    entries  %time %alloc   %time %alloc
+
+MAIN               MAIN                     51           0   0.0    0.0   100.0  100.0
+ main              Main                    102           4  46.2   14.2   100.0  100.0
+  procTextN        Main                    104           2  15.4   13.4    53.8   85.8
+   updateWord      Main                    108      399649  15.4   54.3    23.1   59.7
+    incrementOrAdd Main                    112      399649   0.0    1.0     0.0    1.0
+    cullWord       Main                    109      799298   7.7    4.5     7.7    4.5
+     isClassChar   Main                    110     4527835   0.0    0.0     0.0    0.0
+   whiteMerge      Main                    106      399649  15.4   12.7    15.4   12.7
+ CAF:lvl20_r2EL    Main                    101           1   0.0    0.0     0.0    0.0
+  procTextN        Main                    105           0   0.0    0.0     0.0    0.0
+ CAF:lvl10_r2Ev    Main                     99           1   0.0    0.0     0.0    0.0
+  whiteMerge       Main                    107           0   0.0    0.0     0.0    0.0
+ CAF:lvl4_r2Eo     Main                     97           1   0.0    0.0     0.0    0.0
+  procTextN        Main                    111           0   0.0    0.0     0.0    0.0
+ CAF:main5         Main                     96           1   0.0    0.0     0.0    0.0
+  main             Main                    103           1   0.0    0.0     0.0    0.0
+ CAF               GHC.IO.Handle.FD         92           2   0.0    0.0     0.0    0.0
+ CAF               GHC.Conc.Signal          86           1   0.0    0.0     0.0    0.0
+ CAF               GHC.Show                 84           2   0.0    0.0     0.0    0.0
+ CAF               GHC.IO.Encoding          79           1   0.0    0.0     0.0    0.0
+ CAF               GHC.IO.Encoding.Iconv    78           5   0.0    0.0     0.0    0.0
+ CAF               GHC.IO.FD                77           1   0.0    0.0     0.0    0.0
