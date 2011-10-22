@@ -1,37 +1,36 @@
-	Fri Oct 21 15:37 2011 Time and Allocation Profiling Report  (Final)
+	Fri Oct 21 19:22 2011 Time and Allocation Profiling Report  (Final)
 
-	   lick4 +RTS -K500M -hc -p -sstderr -i0.01 -V0.01 -RTS
+	   lick4 +RTS -K500M -hy[] -hbdrag -hc -p -sstderr -i0.01 -V0.01 -RTS
 
-	total time  =        0.97 secs   (97 ticks @ 10 ms)
-	total alloc = 1,480,762,648 bytes  (excludes profiling overheads)
+	total time  =        1.03 secs   (103 ticks @ 10 ms)
+	total alloc = 1,480,762,632 bytes  (excludes profiling overheads)
 
 COST CENTRE MODULE %time %alloc
 
-cullWord    Main  81.4   12.0
-updateWord  Main  11.3   38.4
-main        Main   4.1   19.5
-procTextN   Main   1.0   15.7
-isClassChar Main   1.0    0.0
-breakdown   Main   1.0   14.3
+cullWord   Main  79.6   12.0
+updateWord Main  11.7   38.4
+main       Main   6.8   19.5
+procTextN  Main   1.0   15.7
+breakdown  Main   1.0   14.3
 
 
                                                                                                individual    inherited
 COST CENTRE      MODULE                  no.    entries  %time %alloc   %time %alloc
 
-MAIN             MAIN                     50           0   0.0    0.0   100.0  100.0
- main            Main                    100           4   4.1   19.5   100.0   99.9
-  procTextN      Main                    102           1   1.0   15.7    95.9   80.4
-   breakdown     Main                    105      880799   1.0   14.3    12.4   52.7
-    updateWord   Main                    106      880799  11.3   38.4    11.3   38.4
-   cullWord      Main                    103           2  81.4   12.0    82.5   12.0
-    isClassChar  Main                    104     6162942   1.0    0.0     1.0    0.0
- CAF:main_$dShow Main                     99           1   0.0    0.1     0.0    0.1
- CAF:lvl2_r2VY   Main                     97           1   0.0    0.0     0.0    0.0
-  procTextN      Main                    107           0   0.0    0.0     0.0    0.0
- CAF:main8       Main                     96           1   0.0    0.0     0.0    0.0
-  main           Main                    101           1   0.0    0.0     0.0    0.0
- CAF             GHC.IO.Handle.FD         90           2   0.0    0.0     0.0    0.0
+MAIN             MAIN                     49           0   0.0    0.0   100.0  100.0
+ main            Main                     98           4   6.8   19.5   100.0   99.9
+  procTextN      Main                    100           1   1.0   15.7    93.2   80.4
+   breakdown     Main                    103      880799   1.0   14.3    12.6   52.7
+    updateWord   Main                    104      880799  11.7   38.4    11.7   38.4
+   cullWord      Main                    101           2  79.6   12.0    79.6   12.0
+    isClassChar  Main                    102     6162942   0.0    0.0     0.0    0.0
+ CAF:main_$dShow Main                     97           1   0.0    0.1     0.0    0.1
+ CAF:lvl2_r2Wb   Main                     95           1   0.0    0.0     0.0    0.0
+  procTextN      Main                    105           0   0.0    0.0     0.0    0.0
+ CAF:main8       Main                     94           1   0.0    0.0     0.0    0.0
+  main           Main                     99           1   0.0    0.0     0.0    0.0
+ CAF             GHC.IO.Handle.FD         89           2   0.0    0.0     0.0    0.0
  CAF             GHC.Conc.Signal          84           1   0.0    0.0     0.0    0.0
- CAF             GHC.IO.Encoding          79           1   0.0    0.0     0.0    0.0
- CAF             GHC.IO.Encoding.Iconv    78           5   0.0    0.0     0.0    0.0
- CAF             GHC.IO.FD                77           1   0.0    0.0     0.0    0.0
+ CAF             GHC.IO.Encoding          78           1   0.0    0.0     0.0    0.0
+ CAF             GHC.IO.Encoding.Iconv    77           5   0.0    0.0     0.0    0.0
+ CAF             GHC.IO.FD                76           1   0.0    0.0     0.0    0.0

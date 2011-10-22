@@ -7,7 +7,7 @@ import Data.List
 import qualified Data.Char as C
 
 
-isClassChar a = C.isAlphaNum a || a == ' ' || a == '\'' || a == '-' || a == '#' || a == '@' || a == '%'
+isClassChar a = C.isAlphaNum a || elem a " \'-#@%"
 
 cullWord :: B.ByteString -> B.ByteString
 cullWord w = B.map C.toLower $ B.filter isClassChar w
@@ -17,14 +17,14 @@ procTextN n t = H.toList $ foldl' ngram H.empty lines
                  where !lines = B.lines $ cullWord t
                        ngram tr line = snd $! foldl' breakdown (base,tr) (B.split ' ' line)
                        base = replicate (n-1) ""
-                       
+
 breakdown :: ([B.ByteString], H.HashMap [B.ByteString] Int) -> B.ByteString -> ([B.ByteString], H.HashMap [B.ByteString] Int)
-breakdown (st@(s:ss),tree) word = newStack `seq` expandedWord `seq` (newStack,expandedWord)
-                                  where newStack = ss++[word]
-                                        expandedWord = updateWord (st++[word]) tree
- 
+breakdown (!st@(s:ss),tree) !word = (newStack,expandedWord)
+                                    where !newStack = ss++[word]
+                                          !expandedWord = updateWord (st++[word]) tree
+
 updateWord :: [B.ByteString] -> H.HashMap [B.ByteString] Int -> H.HashMap [B.ByteString] Int
-updateWord w h = H.insertWith (+) w 1 h
+updateWord !w = H.insertWith (+) w 1
 
 procText :: B.ByteString -> [([B.ByteString],Int)]
 procText t = H.toList $ foldl' (\hash word -> updateWord [word] hash) H.empty words
