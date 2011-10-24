@@ -1,32 +1,32 @@
-	Sat Oct 22 12:57 2011 Time and Allocation Profiling Report  (Final)
+	Sun Oct 23 17:46 2011 Time and Allocation Profiling Report  (Final)
 
 	   lick4 +RTS -K500M -hm -p -sstderr -i0.01 -V0.01 -RTS
 
-	total time  =        0.57 secs   (57 ticks @ 10 ms)
+	total time  =        0.69 secs   (69 ticks @ 10 ms)
 	total alloc = 1,940,397,968 bytes  (excludes profiling overheads)
 
 COST CENTRE MODULE %time %alloc
 
-cullWord   Main  82.5   14.3
-updateWord Main   7.0   67.6
-procTextN' Main   5.3    0.4
-main       Main   5.3    1.1
+cullWord   Main  58.0   14.3
+updateWord Main  20.3   67.6
+main       Main  15.9    1.1
+procTextN' Main   4.3    0.4
+ngram      Main   1.4    7.5
 procTextN  Main   0.0    9.0
-ngram      Main   0.0    7.5
 
 
                                                                                                individual    inherited
 COST CENTRE     MODULE                  no.    entries  %time %alloc   %time %alloc
 
 MAIN            MAIN                     51           0   0.0    0.0   100.0  100.0
- main           Main                    102           4   5.3    1.1   100.0  100.0
+ main           Main                    102           4  15.9    1.1   100.0  100.0
   getChunkList  Main                    108          12   0.0    0.0     0.0    0.0
-  cullWord      Main                    105           2  82.5   14.3    82.5   14.3
+  cullWord      Main                    105           2  58.0   14.3    58.0   14.3
    isClassChar  Main                    106     6162942   0.0    0.0     0.0    0.0
-  procTextN'    Main                    104           7   5.3    0.4    12.3   84.6
-   procTextN    Main                    109           6   0.0    9.0     7.0   84.2
-    ngram       Main                    110      870278   0.0    7.5     7.0   75.1
-     updateWord Main                    111      870272   7.0   67.6     7.0   67.6
+  procTextN'    Main                    104           7   4.3    0.4    26.1   84.6
+   procTextN    Main                    109           6   0.0    9.0    21.7   84.2
+    ngram       Main                    110      870278   1.4    7.5    21.7   75.1
+     updateWord Main                    111      870272  20.3   67.6    20.3   67.6
  CAF:lvl5_r3tk  Main                    100           1   0.0    0.0     0.0    0.0
   isClassChar   Main                    107           1   0.0    0.0     0.0    0.0
  CAF:lvl4_r3tj  Main                     99           1   0.0    0.0     0.0    0.0
