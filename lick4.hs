@@ -48,5 +48,5 @@ procText t = H.toList $ foldl' (\hash word -> updateWord [word] hash) H.empty wo
              where words = B.split ' ' $ B.map (\a -> if a == '\n' then ' ' else a) t
 
 main = do
-       test2 <- runGet (getChunkList 1000000) <$> cullWord <$> BL.readFile "canewobble"
+       test2 <- runGet (getChunkList 32000) <$> cullWord <$> BL.readFile "canewobble"
        print $ filter (\(a,b) -> b > 100) $ sortBy (\(a,b) (c,d) -> compare d b) $ procTextN' 3 test2
